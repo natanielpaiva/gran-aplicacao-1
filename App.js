@@ -131,16 +131,17 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: 'row',
+    flexWrap: 'wrap', // Permite que os botões sejam exibidos em várias linhas
     justifyContent: 'space-between',
-    width: '80%',
+    width: '90%', // Aumentei a largura para 90%
   },
   button: {
-    width: 70,
+    width: '22%', // Define a largura como 22% do contêiner
     height: 70,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4CAF50',
-    borderRadius: 35,
+    borderRadius: 10, // Alterei para um valor menor para melhorar a aparência
     margin: 5,
   },
   buttonText: {
