@@ -81,23 +81,30 @@ export default function App() {
         style={styles.input}
         keyboardType="numeric"
         placeholder="0"
-        value={input} // Exibe o valor do estado `input`
-        onChangeText={(text) => setInput(text)} // Atualiza o estado `input`
+        value={input}
+        onChangeText={(text) => setInput(text)}
       />
+      <Text style={styles.resultText}>Resultado: {result}</Text>
 
       {/* Botões de Operações */}
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => handleOperation('+')}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => handleOperation('-')}>
           <Text style={styles.buttonText}>-</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => handleOperation('*')}>
           <Text style={styles.buttonText}>*</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => handleOperation('/')}>
           <Text style={styles.buttonText}>/</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleEquals}>
+          <Text style={styles.buttonText}>=</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleClear}>
+          <Text style={styles.buttonText}>C</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -139,5 +146,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 24,
     color: '#fff',
+  },
+  resultText: {
+    fontSize: 20,
+    marginBottom: 20,
+    color: '#333',
   },
 });
